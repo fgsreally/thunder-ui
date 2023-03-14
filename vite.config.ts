@@ -7,6 +7,8 @@ import transformerDirectives from '@unocss/transformer-directives'
 import { presetAttributify, presetUno } from 'unocss'
 import AutoImport from 'unplugin-auto-import/vite'
 import presetIcons from '@unocss/preset-icons'
+import Icons from 'unplugin-icons/vite'
+import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -22,12 +24,15 @@ export default defineConfig({
   AutoImport({
     dirs: ['./src'],
     imports: ['vue', 'vue-router'],
+    resolvers: [IconsResolver()],
   }),
   Components({
     dirs: ['./src/components'],
     directoryAsNamespace: false,
+    resolvers: [IconsResolver()],
 
   }),
+  Icons(),
   UnoCSS({
     transformers: [
       transformerDirectives(),

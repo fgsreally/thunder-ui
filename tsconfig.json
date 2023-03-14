@@ -12,7 +12,7 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["unplugin-vue-macros/macros-global"],
+    "types": ["unplugin-vue-macros/macros-global","unplugin-icons/types/vue3"],
     "vueCompilerOptions": {
       "plugins": [
         "@vue-macros/volar/define-options",
